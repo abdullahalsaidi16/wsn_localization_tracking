@@ -17,24 +17,22 @@ This a python scripts need the following libraries to run them:
 ## Functionality
 you will see multiple scripts and files and I will interduce you to them:
 First:
-[Lib]() This is Folder containes my programming implementation for Kalman Filter in the Three orders
-[model]() This contains script Model.py I used for Tunning the paramater of My SVM regressor and saving it also include a Lib folder
-[Random Fourier Features]() This folder also for testing techinique I used to know about the best parameters for RFF
-[Results]() This contains some importatnt images I saved for the project
-[trajectory]() This script used for building the trajectories for my study
-[WSN]() This scrpit very important for building the WSN rssi , Training point and Locating the sensors and I used as a function to be used in other places
-[main.py]() contains my study in the network and testing the perfomance and accurency for algorithms I used and shows how could be very useful.
+-[Lib]() This is Folder containes my programming implementation for Kalman Filter in the Three orders
+-[model]() This contains script Model.py I used for Tunning the paramater of My SVM regressor and saving it also include a Lib folder
+-[Random Fourier Features]() This folder also for testing techinique I used to know about the best parameters for RFF
+-[Results]() This contains some importatnt images I saved for the project
+-[trajectory]() This script used for building the trajectories for my study
+-[WSN]() This scrpit very important for building the WSN rssi , Training point and Locating the sensors and I used as a function to be used in other places
+-[main.py]() contains my study in the network and testing the perfomance and accurency for algorithms I used and shows how could be very useful.
 All my results are plotted from this script.you 
-[READ-ME.md]() This the file you are reading :3 
+-[READ-ME.md]() This the file you are reading :3 
 
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
 
 ## Authors
 
@@ -44,11 +42,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
 
 ## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
 
