@@ -7,8 +7,8 @@ This project and the associated codes are part of my graduation project named "L
 
 Simulation environment:
 - Area: 200X200 m
-- # Anchor nodes: 16
-- # training examples: 100
+- No. of Anchor nodes: 16
+- No. of training examples: 100
 The motion models we invetigated:
 - Model of order 1
 - Model of order 2
