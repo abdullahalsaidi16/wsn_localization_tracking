@@ -46,7 +46,7 @@ All my results are plotted from this script.you
 
 ## Authors
 
-* **Abdullah Alsaidi**[Abdullah Alsaidi](https://github.com/abdullahalsaidi16)
+* [**Abdullah Alsaidi**](https://github.com/abdullahalsaidi16)
 
 See also the list of [contributors](https://github.com/abdullahalsaidi16/wsn_localization_tracking/contributors) who participated in this project.
 
