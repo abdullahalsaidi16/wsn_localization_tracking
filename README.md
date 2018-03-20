@@ -18,7 +18,7 @@ The ML Algorithms we used:
 
 ### Prerequisites
 
-This a python scripts need the following libraries to run them:
+These python scripts need the following libraries to run them:
 - scipy
 - numpy
 - scikit-learn
@@ -48,7 +48,7 @@ All my results are plotted from this script.you
 
 * **Abdullah Alsaidi** - *Initial work* - [Abdullah Alsaidi](https://github.com/abdullahalsaidi16)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/abdullahalsaidi16/wsn_localization_tracking/contributors) who participated in this project.
 
 ## License
 
