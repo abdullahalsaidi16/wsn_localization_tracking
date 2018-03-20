@@ -1,10 +1,20 @@
 # Localization and Tracking in Wireless Sensors Network
 
-This is my graduation project in Computer Engineering and Automation I use machine learning algorithms (Support Victor Machine and Random Fourier Features) with Kalman Filter for tracking in Wireless Sensors Network.
+The localization of moving targets in wireless sensor networks has been a very important problem in the past decade. Massive research has been dedicated to find solutions for this problem. Though there exist various methods to solve the problem, the Received Signal Level (RSL) method has proved to be one of the best. Technically this methods uses the signal strength levels from different anchor nodes as indicators to the corresponding position. However, building a mathematical model to link the position with the corresponding RSSLs is a very complicated impirical approach. For this reason we use machine learning algorithms to build the required mathematical model. Considering the tracking problem of moving targets to a be a successive application of localization algorithms, we make use of Kalman Filter and information available from the accelorometer of the moving target in order to obtain better accuracy. 
+This project and the associated codes are part of my graduation project named "Localization and Tracking of a moving target in a wireless sensor network" in the department of Computer and Automation Engineering, Faculty of Mechanical and Electrical Engineering, Damasus University. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Simulation environment:
+- Area: 200X200 m
+- No. of Anchor nodes: 16
+- No. of training examples: 100
+The motion models we invetigated:
+- Model of order 1
+- Model of order 2
+- Model of order 3
+The ML Algorithms we used:
+- SVM
 
 ### Prerequisites
 
