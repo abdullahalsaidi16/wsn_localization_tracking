@@ -46,12 +46,13 @@ All my results are plotted from this script.you
 
 ## Authors
 
-* **Abdullah Alsaidi** - *Initial work* - [Abdullah Alsaidi](https://github.com/abdullahalsaidi16)
+* **Abdullah Alsaidi**[Abdullah Alsaidi](https://github.com/abdullahalsaidi16)
 
 See also the list of [contributors](https://github.com/abdullahalsaidi16/wsn_localization_tracking/contributors) who participated in this project.
 
 ## License
 
+This project is licensed under the GNU GPL-v3 
 
 
 ## Acknowledgments
