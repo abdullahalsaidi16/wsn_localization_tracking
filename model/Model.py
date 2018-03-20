@@ -52,7 +52,7 @@ rand_svr.fit(X_mm,Y[:,0])
 print ("The best parameters are %s with a score of %0.2f" %(rand_svr.best_params_,rand_svr.best_score_))
 """
 """
-Xt ,Xval ,Yt , Yval = train_test_split(X_std , Y  , train_size = 0.3 , random_state =42)
+Xt ,Xval ,Yt , Yval = train_test_split(X_std , Y  , test_size = 0.3 , random_state =42)
 Y1t = Yt[:,0]
 Y2t = Yt[:,1]
 

@@ -14,12 +14,12 @@ def assemble(X2,Y2):
 #first trajecory
 X1 = np.arange(50,150,1)
 Y1 = np.arange(50,150,1)
-pos1=assemble(X1,Y1)
+tra1=assemble(X1,Y1)
 
 # second trajectory
 X2=np.arange(0,200,1)
 Y2=-np.exp(0.0266*X2) +200
-pos2 = assemble(X2,Y2)
+tra2 = assemble(X2,Y2)
 
 
 
@@ -80,10 +80,17 @@ def smooth(path,data_weight=0.3 ,smooth_weight=0.15, tolerance = 0.01):
 		c+=1			
 	return newpath
 
-newpath = smooth(path)
+tra3 = smooth(path)
 
-np.save('tra1.npy',pos1)
+#np.save('tra1.npy',tra1)
 
-plt.plot(pos2[:,0],pos2[:,1])
+plt.plot(tra1[:,0],tra1[:,1])
+
+plt.show()
+
+plt.plot(tra2[:,0],tra2[:,1])
+plt.show()
+
+plt.plot(tra3[:,0],tra3[:,1])
 plt.show()
 

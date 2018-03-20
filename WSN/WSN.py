@@ -43,5 +43,5 @@ plt.scatter( sen[:,0], sen[:,1], marker="^", c="r",label="Stationary sensors" )
 plt.scatter( pos[:,0], pos[:,1], marker="+", c="b",label="Offline postions")
 plt.legend(loc='upper right',framealpha=1)
 plt.show()
-"""
 
+"""

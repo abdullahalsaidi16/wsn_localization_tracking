@@ -12,6 +12,8 @@ from Lib.Kalman2 import Kalman as Kalman_2
 from Lib.Kalman import Kalman as Kalman_1
 from WSN.WSN import WSN
 
+np.random.seed(76)
+
 def predict_svm(X1):
 	h1 = np.matrix ( svm1.predict(X1) )
 	h2 = np.matrix ( svm2.predict(X1) )
@@ -83,7 +85,7 @@ R = np.multiply( np.matrix([[1],[1]])*r , np.matrix(np.eye(r.shape[1]))  )
 
 #Predicting and Filtering the real Trajectory throw SVM
 
-
+"""
 #Trajectory 1
 init_val =[1,1]
 pred_tra1_svm = predict_svm(X1)
@@ -106,6 +108,7 @@ print ("The error of the Kalman the first trajectory %0.4f " %(mean_absolute_err
 print ("The error of the RFF-Kalman the first trajectory %0.4f " %(mean_absolute_error(tra1,poshat_1_rff)))
 
 plt.plot(tra1[:,0],tra1[:,1],"b-",label='Real trajectory')
+plt.plot(pred_tra1_svm[:,0],pred_tra1_svm[:,1],"*",markersize=2.5,label='SVM Prediction',color='orange')
 plt.plot(poshat_1_rff[:,0],poshat_1_rff[:,1],"g--",markersize=2,label='RFF+Kalman')
 plt.plot(poshat_1[:,0],poshat_1[:,1],"r--",markersize=4,label='SVM+Kalman')
 plt.legend(loc='lower right',framealpha=1)
@@ -135,13 +138,13 @@ print ("The error of the Kalman the Second trajectory %0.4f " %(mean_absolute_er
 print ("The error of the RFF-Kalman the Second trajectory %0.4f " %(mean_absolute_error(tra2,poshat_2_rff)))
 
 plt.plot(tra2[:,0],tra2[:,1],"b-",label='Real trajectory')
+plt.plot(pred_tra2_svm[:,0],pred_tra2_svm[:,1],"*",markersize=2.5,label='SVM Prediction',color='orange')
 plt.plot(poshat_2_rff[:,0],poshat_2_rff[:,1],"g--",markersize=2,label='RFF+Kalman')
 plt.plot(poshat_2[:,0],poshat_2[:,1],"r--",markersize=4,label='SVM+Kalman')
 plt.legend(loc='upper right',framealpha=1)
 plt.show() 
 
-
-
+"""
 # Trajectory 3
 init_val=[0,0]
 pred_tra3_svm = predict_svm(X3)
@@ -162,6 +165,7 @@ print ("The error of the Kalman the Third trajectory %0.4f " %(mean_absolute_err
 print ("The error of the RFF-Kalman the Third trajectory %0.4f " %(mean_absolute_error(tra3,poshat_3_rff)))
 
 plt.plot(tra3[:,0],tra3[:,1],"b-",label='Real trajectory')
+plt.plot(pred_tra3_svm[:,0],pred_tra3_svm[:,1],"*",markersize=2.5,label='SVM Prediction',color='orange')
 plt.plot(poshat_3_rff[:,0],poshat_3_rff[:,1],"g--",markersize=2,label='RFF+Kalman')
 plt.plot(poshat_3[:,0],poshat_3[:,1],"r--",markersize=4,label='SVM+Kalman')
 plt.legend(loc='upper right',framealpha=1)
@@ -170,8 +174,10 @@ plt.show()
 
 # Ploting error of svm and rff in trajectory 
 
+pred_tra3_svm = predict_svm(X3)
 sample_size = np.arange(20,180,10)
 error = {'SVM':[mean_absolute_error(tra3,poshat_3)],'RFF':[]}
+Kalman_improve = {'SVM':[mean_absolute_error(tra3,pred_tra3_svm) - mean_absolute_error(tra3,poshat_3)],'RFF':[]}
 
 for D in sample_size:
 	rff_svm1.set_params(feature_map__n_components = D , feature_map__gamma = 0.05 )
@@ -179,19 +185,28 @@ for D in sample_size:
 	rff_svm1.fit(X_std,Y[:,0])
 	rff_svm2.fit(X_std,Y[:,1])
 	
-	pred_tra3_svm = predict_svm(X3)
+	
 	pred_tra3_rff = predict_rff(X3)
 	
 	poshat_3_rff = Kalman_2(pred_tra3_rff,R,0.2,tra3[0],init_val)
 	
 	error['RFF'].append(mean_absolute_error(tra3,poshat_3_rff))
+	Kalman_improve['RFF'].append( mean_absolute_error(tra3,pred_tra3_rff ) - mean_absolute_error(tra3,poshat_3_rff) )
 
-error['SVM'][0] = 6.5
+
 
 plt.ylabel('Mean absolute error')
 plt.xlabel('Components of RFF')
 plt.plot(sample_size,error['SVM']*len(sample_size),'b-',label="SVM + KF")
 plt.plot(sample_size,error['RFF'],c='orange',label="RFF + KF")
+plt.legend(loc='upper right')
+plt.show()
+
+# Plotting Kalman Imporve
+#plt.ylabel('Kalman I')
+plt.xlabel('Components of RFF')
+plt.plot(sample_size,Kalman_improve['SVM']*len(sample_size),'b-',label="SVM + KF")
+plt.plot(sample_size,Kalman_improve['RFF'],c='orange',label="RFF + KF")
 plt.legend(loc='upper right')
 plt.show()
 
