@@ -52,7 +52,7 @@ See also the list of [contributors](https://github.com/abdullahalsaidi16/wsn_loc
 
 ## License
 
-This project is licensed under the GNU GPL-v3 
+This project is licensed under the GNU GPL-3.0 
 
 
 ## Acknowledgments

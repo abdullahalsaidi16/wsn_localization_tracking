@@ -151,11 +151,12 @@ pred_tra3_svm = predict_svm(X3)
 pred_tra3_rff = predict_rff(X3)
 
 # Kalman 1st order
-#poshat_3 = Kalman_1(pred_tra3,R,0.2,tra3[0],init_val)
+poshat_3 = Kalman_1(pred_tra3_svm,R,0.2,tra3[0],init_val)
+poshat_3_rff = Kalman_1(pred_tra3_rff,R,0.2,tra3[0],init_val)
 
 # Kalman 2nd order
-poshat_3 = Kalman_2(pred_tra3_svm,R,0.2,tra3[0],init_val)
-poshat_3_rff = Kalman_2(pred_tra3_rff,R,0.2,tra3[0],init_val)
+#poshat_3 = Kalman_2(pred_tra3_svm,R,0.2,tra3[0],init_val)
+#poshat_3_rff = Kalman_2(pred_tra3_rff,R,0.2,tra3[0],init_val)
 
 # Kalman 3rd order
 #poshat_3 = Kalman_3(pred_tra3,R,0.001,tra3[0],init_val)
@@ -165,15 +166,15 @@ print ("The error of the Kalman the Third trajectory %0.4f " %(mean_absolute_err
 print ("The error of the RFF-Kalman the Third trajectory %0.4f " %(mean_absolute_error(tra3,poshat_3_rff)))
 
 plt.plot(tra3[:,0],tra3[:,1],"b-",label='Real trajectory')
-plt.plot(pred_tra3_svm[:,0],pred_tra3_svm[:,1],"*",markersize=2.5,label='SVM Prediction',color='orange')
-plt.plot(poshat_3_rff[:,0],poshat_3_rff[:,1],"g--",markersize=2,label='RFF+Kalman')
-plt.plot(poshat_3[:,0],poshat_3[:,1],"r--",markersize=4,label='SVM+Kalman')
-plt.legend(loc='upper right',framealpha=1)
+#plt.plot(pred_tra3_svm[:,0],pred_tra3_svm[:,1],"*",markersize=2.5,label='SVM Prediction',color='orange')
+plt.plot(poshat_3_rff[:,0],poshat_3_rff[:,1],"g--",linewidth=1.4,label='RFF+Kalman')
+plt.plot(poshat_3[:,0],poshat_3[:,1],"r--",markersize=8,label='SVM+Kalman')
+plt.legend(loc='lower left',framealpha=1)
 plt.show() 
 
 
 # Ploting error of svm and rff in trajectory 
-
+"""
 pred_tra3_svm = predict_svm(X3)
 sample_size = np.arange(20,180,10)
 error = {'SVM':[mean_absolute_error(tra3,poshat_3)],'RFF':[]}
@@ -234,7 +235,7 @@ plt.xlabel('Training Examples')
 plt.ylabel('Mean absolute error')
 plt.plot(x,training_curve,c='blue',label="RFF + KF")
 plt.show()
-
+"""
 
 """
 x = np.arange(0,len(tra3),1)	
