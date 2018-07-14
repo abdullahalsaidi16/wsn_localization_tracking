@@ -168,7 +168,7 @@ print ("The error of the RFF-Kalman the Third trajectory %0.4f " %(mean_absolute
 plt.plot(tra3[:,0],tra3[:,1],"b-",label='Real trajectory')
 #plt.plot(pred_tra3_svm[:,0],pred_tra3_svm[:,1],"*",markersize=2.5,label='SVM Prediction',color='orange')
 plt.plot(poshat_3_rff[:,0],poshat_3_rff[:,1],"g--",linewidth=1.4,label='RFF+Kalman')
-plt.plot(poshat_3[:,0],poshat_3[:,1],"r--",markersize=8,label='SVM+Kalman')
+plt.plot(poshat_3[:,0],poshat_3[:,1],"r--",linewidth=1.4,label='SVM+Kalman')
 plt.legend(loc='lower left',framealpha=1)
 plt.show() 
 
